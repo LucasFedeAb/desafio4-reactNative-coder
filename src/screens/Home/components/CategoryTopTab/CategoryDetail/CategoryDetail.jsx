@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import styles from "./CategoryDetail.style";
-import gifsData from "../../../data/gifsData";
+import gifsData from "../../../../../data/gifsData";
 import { useNavigation } from "@react-navigation/native";
 
 const CategoryDetail = ({ category }) => {

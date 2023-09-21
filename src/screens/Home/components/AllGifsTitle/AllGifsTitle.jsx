@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image, FlatList } from "react-native";
 import styles from "./AllGifsTitle.style";
-import { Sidebar } from "../../components";
+import { Sidebar } from "../../../../components";
 
 const AllGifsTitle = ({ route }) => {
   const { gifs, title } = route.params || { gifs: [] };
@@ -12,12 +12,10 @@ const AllGifsTitle = ({ route }) => {
 
   for (const item of filteredGifsByTitle) {
     for (const gif of item.gifs) {
-      // Verificar si el GIF ya está en la lista uniqueGifs
       const isDuplicate = uniqueGifs.some((uniqueGif) => uniqueGif === gif);
 
-      // Si no es un duplicado, agregarlo a la lista uniqueGifs
-      if (!isDuplicate) {
-        uniqueGifs.push(gif);
+      {
+        !isDuplicate && uniqueGifs.push(gif);
       }
     }
   }

@@ -3,8 +3,8 @@ import { colors } from "../../constants/colors";
 
 export default styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#FFF",
+    flex:1,
+    backgroundColor: "#fff",
   },
   listContainer: {
     flex: 1,

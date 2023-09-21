@@ -1,11 +1,11 @@
 import React from "react";
-import HomeTopTabNavigator from "./HomeTopTabNavigator";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { colors, colorGreen } from "../constants/colors";
-import HomeStackNavigator from "./HomeStackNavigator";
-import SearchStackNavigator from "./SearchStackNavigator";
+import { colors } from "../../constants/colors";
+import styles from "./BottomTabNavigator.style.js";
+import HomeStackNavigator from "../HomeStackNavigator/HomeStackNavigator";
+import SearchStackNavigator from "../SearchStackNavigator/SearchStackNavigator";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -21,7 +21,7 @@ function CustomCreateIcon({ focused }) {
 function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
-      initialRouteName="Home"
+      initialRouteName="HomeNav"
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarShowLabel: false,
@@ -47,14 +47,14 @@ function BottomTabNavigator() {
           }
 
           return (
-            <React.Fragment>
+            <View>
               <Ionicons
                 name={iconName}
                 size={25}
                 color={focused ? colors.primary : "#000"}
               />
               {focused && <Text style={styles.tabLabelFocus}>{labelText}</Text>}
-            </React.Fragment>
+            </View>
           );
         },
       })}
@@ -64,51 +64,5 @@ function BottomTabNavigator() {
     </BottomTab.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-  tabBar: {
-    backgroundColor: colorGreen.quaternary,
-    alignItems: "center",
-    height: 55,
-  },
-
-  tabLabelFocus: {
-    color: colors.primary,
-    fontSize: 10,
-    fontWeight: "600",
-  },
-  iconPlusStyle: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    backgroundColor: colorGreen.tertiary,
-    fontSize: 40,
-    borderRadius: 60,
-    bottom: 5,
-    paddingHorizontal: 6.5,
-    color: colors.primary,
-    padding: 5,
-  },
-  iconPlusStyleFocus: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    backgroundColor: colorGreen.tertiary,
-    fontSize: 40,
-    borderRadius: 60,
-    bottom: 5,
-    paddingHorizontal: 6.5,
-    color: colors.primary,
-    padding: 5,
-    transform: [{ translateY: -10 }],
-  },
-  tabLabelFocusPlus: {
-    color: colors.primary,
-    fontSize: 10,
-    fontWeight: "600",
-    textAlign: "center",
-    paddingTop: 4,
-  },
-});
 
 export default BottomTabNavigator;

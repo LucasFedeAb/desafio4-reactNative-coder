@@ -2,7 +2,7 @@ import { View } from "react-native";
 import gifsData from "../../data/gifsData";
 import styles from "./Home.style";
 import { Sidebar } from "../../components";
-import HomeTopTabNavigator from "../../navigation/HomeTopTabNavigator";
+import HomeTopTabNavigator from "../../navigation/HomeStackNavigator/HomeTopTabNavigator/HomeTopTabNavigator";
 
 const Home = () => {
   const uniqueCategories = [];

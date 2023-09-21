@@ -4,7 +4,7 @@ import fonts from "./src/global/fonts";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import styles from "./App.Style.js";
-import BottomTabNavigator from "./src/navigation/BottomTabNavigator";
+import BottomTabNavigator from "./src/navigation/BottomTabNavigator/BottomTabNavigator";
 
 export default function App() {
   const [fontsLoaded] = useFonts(fonts);

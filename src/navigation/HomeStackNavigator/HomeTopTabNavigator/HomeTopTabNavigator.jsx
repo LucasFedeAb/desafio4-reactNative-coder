@@ -1,6 +1,6 @@
-import { StyleSheet } from "react-native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import { CategoryTopTab } from "../screens";
+import { CategoryTopTab } from "../../../screens/Home/components";
+import styles from "./HomeTopTabNavigator.style";
 
 const TopTab = createMaterialTopTabNavigator();
 
@@ -12,7 +12,6 @@ const HomeTopTabNavigator = ({ uniqueCategories }) => {
         tabBarLabelStyle: styles.tabLabel,
         tabBarItemStyle: styles.tabBarItem,
         tabBarContentContainerStyle: styles.tabBarContentContainer,
-        indicatorStyle: styles.indicator,
       }}
     >
       {uniqueCategories.map((category) => (
@@ -26,25 +25,5 @@ const HomeTopTabNavigator = ({ uniqueCategories }) => {
     </TopTab.Navigator>
   );
 };
-
-const styles = StyleSheet.create({
-  tabLabel: {
-    fontSize: 10,
-    letterSpacing: 1,
-  },
-  tabBarItem: {
-    flex: 1,
-    width: "auto",
-    marginHorizontal: 50,
-  },
-  tabBarContentContainer: {
-    flexDirection: "row",
-  },
-  navigationContainer: {
-    backgroundColor: "#000",
-    paddingTop: 8,
-    paddingBottom: 50,
-  },
-});
 
 export default HomeTopTabNavigator;
